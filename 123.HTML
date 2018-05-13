@@ -1,0 +1,42 @@
+
+
+<script>
+function computeBMI(weight, height){
+	return 703*weight/(height*height);
+}
+
+function calculate(){
+	var weight = document.getElementById("weight").value;
+	var height = document.getElementById("height").value;
+	var BMI = computeBMI(weight,height);
+	
+	document.getElementById("score").innerHTML = BMI;
+
+	var type = "";
+	if(BMI<=18) type="Underweight";
+	else if(BMI<=25)type="Normal";
+	else if(BMI<=30)type="Overweight";
+	else type="Obese";
+
+	document.getElementById("type").innerHTML = type;
+}
+
+</script>
+
+<html>
+<head>
+<title>123</title>
+</head>
+<body>
+	<h1>Calculate your Body Mass Index (BMI)!</h1>
+	<fieldset>
+ 		Weight (in pounds): <input type="text" id="weight" /><br />
+ 		Height (in inches): <input type="text" id="height" /><br />
+ 		<button onclick="calculate();">Get BMI!</button>
+	</fieldset>
+	<p>
+ 		Your BMI is <span id="score"></span>. <br />
+ 		Your body type is <span id="type"></span>.
+	</p> 
+</body>
+</html>
